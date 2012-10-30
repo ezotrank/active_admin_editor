@@ -1,5 +1,10 @@
 ActiveAdmin.register ImageAsset do
-  menu parent: 'Assets', label: 'Images'
+  menu parent: I18n.t('active_admin_editor.assets'), label: I18n.t('active_admin_editor.images')
+
+  batch_action :destroy, false
+
+  config.clear_sidebar_sections!
+
   index as: :grid do |image_asset|
     link_to(image_tag(image_asset.storage.thumb), admin_image_asset_path(image_asset))
   end
@@ -14,10 +19,10 @@ ActiveAdmin.register ImageAsset do
 
   show do
     attributes_table do
-      row('Dimensions') do
-        "#{image_asset.dimensions[:width]}px x #{image_asset.dimensions[:height]}px"
+      row(t('active_admin_editor.dimensions')) do
+        "#{image_asset.dimensions[:width]}X#{image_asset.dimensions[:height]}"
       end
-      row('Thumbnail') do
+      row(t('active_admin_editor.thumbnail')) do
         image_tag(image_asset.storage.thumb)
       end
       row('25%') do

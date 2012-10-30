@@ -1,0 +1,18 @@
+ru:
+  active_admin_editor:
+    assets: Статические файлы
+    images: Изображения
+    dimensions: Разрешение
+    thumbnail: Миниатюра
+    
+  activerecord:
+    models:
+      image_asset:
+        one: Изображение
+        few: Изобраниния
+        many: Изображения
+        other: Изображения
+    attributes:
+      image_asset:
+        storage: Изображение
+        
